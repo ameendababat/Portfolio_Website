@@ -7,6 +7,7 @@
   "scripts": {
     "build:css": "sass src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
     "build:html": "cpx \"src/*.html\" dist/",
+    "build:img": "cpx \"src/img/**/*\" dist/img",
     "build": "npm run build:css && npm run build:html",
     "watch": "sass --watch src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
     "preview": "serve dist",
