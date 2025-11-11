@@ -3,12 +3,22 @@
   "version": "1.0.0",
   "description": "Ameendababat Personal Homepage",
   "main": "index.js",
+  
   "scripts": {
-    "sass": "sass src/scss/main.scss dist/css/main.css -w"
+    "build:css": "sass src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
+    "build:html": "cpx \"src/*.html\" dist/",
+    "build": "npm run build:css && npm run build:html",
+    "watch": "sass --watch src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
+    "preview": "serve dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "",
+  "author": "Ameen Dababat",
   "license": "ISC",
-  "dependencies": {
-    "sass": "^1.93.2"
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "gh-pages": "^6.3.0",
+    "sass": "^1.94.0",
+    "serve": "^14.2.5"
   }
 }

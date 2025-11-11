@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ameen Dababat - Computer Engineer | Backend Developer</title>
+    <meta name="title" content="Ameen Dababat - Computer Engineer | Backend Developer">
+    <meta name="description" content="Welcome to the personal homepage of Ameen Dababat, a passionate Computer Engineer and Backend Developer. Explore my projects, skills, and experience in the world of technology.">
+    <meta name="keywords" content="Ameen Dababat, Computer Engineer, Backend Developer, python, jango, flask, FastAPI, sql, RESTful APIs, software development, programming, technology, projects, skills, experience">
+    <meta name="author" content="Ameen Dababat">
+    <link rel="icon" href="./img/icon.png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../dist/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar__brand">
+                <a href="#" class="navbar__logo">Ameen Dababat</a>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="#home" class="navbar__link">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#about" class="navbar__link">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#projects" class="navbar__link">Projects</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#skills" class="navbar__link">Skills</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#education" class="navbar__link">Education</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#certificates" class="navbar__link">Certificates</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#contact" class="navbar__link">Contact</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home" id="home">
+            <div class="home__content">
+                <h1 class="home__greeting">Hi, I'm <span class="home__name">Ameen Dababat</span></h1>
+                <h2 class="home__title">Computer Engineer | Python Developer | Backend</h2>
+                <p class="home__description">
+                    Welcome to my personal homepage! I'm a passionate Computer Engineer and Backend Developer with expertise in Python, Django, FastAPI, SQL, and RESTful APIs. 
+                    Explore my projects, skills, and experience in the world of technology.
+                </p>
+                <div class="home__actions">
+                    <a href="https://drive.google.com/file/d/1YWOrH5gCG-DPj1uwpGw0DP3PrAThcZnO/view?usp=sharing" target="_blank" class="button button--primary">View My CV</a>
+                    <a href="#contact" class="button button--secondary">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro-banner" id="about">
+            <h2 class="intro-banner__heading"><span class="intro-banner__heading-text">About Me</span></h2>
+            <div class="intro-banner__content">
+                <div class="intro-banner__image-wrapper">
+                    <img src="/src/img/profile_picture.jpg" alt="Profile picture of ameen dababat" class="intro-banner__image">
+                </div>
+                <div class="intro-banner__info">
+                    <h3 class="intro-banner__subheading">Who I Am</h3>
+                    <p class="intro-banner__description">
+                        I'm a Computer Engineer and Python Developer focused on building scalable APIs and robust backends using python,  
+                        FasstAPI, and modern architectural patterns. 
+                        I value clean code, performance, and secure, maintainable systems.
+                    </p>
+                    <p class="intro-banner__description">
+                        I enjoy collaborating in teams, applying research-driven problem solving, and continuously learning. 
+                    </p>
+                    <div class="intro-banner__contacts">
+                        <div class="intro-banner__contact-item">
+                            <i class="fa-solid fa-location-dot"></i> 
+                            <span class="contact-text">Tubas, Palestine</span>
+                        </div>
+                        <div class="intro-banner__contact-item">
+                            <i class="fa-solid fa-envelope"></i> 
+                            <a class="intro-banner__link" href="mailto:ameendababat07@gmail.com" target="_blank">ameendababat07@gmail.com</a>
+                        </div>
+                        <div class="intro-banner__contact-item">
+                            <i class="fa-solid fa-phone"></i> 
+                            <a class="intro-banner__link" href="tel:+972569787270" target="_blank">+972-569787270</a>
+                        </div>
+                        <div class="intro-banner__contact-item">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <a class="intro-banner__link" href="https://www.linkedin.com/in/ameendababat/" target="_blank">LinkedIn</a>
+                        </div>
+                        <div class="intro-banner__contact-item">
+                            <i class="fa-brands fa-github"></i>
+                            <a class="intro-banner__link" href="https://github.com/ameendababat" target="_blank">GitHub</a>
+                        </div>
+                        <div class="intro-banner__contact-item">
+                            <i class="fa-brands fa-youtube"></i>
+                            <a class="intro-banner__link" href="https://www.youtube.com/@ameendababat9886" target="_blank">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="projects__container">
+                <h2 class="projects__heading"><span class="projects__heading-text">Featured Projects</span></h2>
+                <div class="projects__grid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="project-card__media">
+                            <img src="/src/img/markdown project.png" alt="markdown-note project" class="project-card__image">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">markdown-note API project</h3>
+                            <p class="project-card__description">
+                                A FastAPI + PostgreSQL backend for managing Markdown notes with ease. 
+                                It supports user authentication, note revisions, nested folders, tagging, and grammar checks — all with secure HTML rendering and caching. 
+                                Built for scalability and production use, it includes background tasks, migrations, and full API documentation for seamless integration.
+                            </p>
+                            <div class="project-card__technologies">
+                                <strong class="project-card__tech-label">Skills used:</strong>
+                                <span class="project-card__tech-tag">Python</span>
+                                <span class="project-card__tech-tag">FastAPI</span>
+                                <span class="project-card__tech-tag">PostgreSQL</span>
+                                <span class="project-card__tech-tag">SQLAlchemy</span>
+                                <span class="project-card__tech-tag">RESTful APIs</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="https://github.com/ameendababat/Markdown-Note-Project" target="_blank" class="project-card__link project-card__link--github"><i class="fa-brands fa-github" class="project-card__link project-card__link--github"></i>View Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="project-card__media">
+                            <img src="/src/img/to do list.jpg" alt="To-DO list API project" class="project-card__image">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">To-Do list API project</h3>
+                            <p class="project-card__description">
+                                A simple and efficient task management backend built with FastAPI, SQLAlchemy, and PostgreSQL. 
+                                It offers clean architecture with services, repositories, and models for organized code, supporting full CRUD operations to create, update, and manage daily tasks easily and reliably.
+                            </p>
+                            <div class="project-card__technologies">
+                                <strong class="project-card__tech-label">Skills used:</strong>
+                                <span class="project-card__tech-tag">Python</span>
+                                <span class="project-card__tech-tag">FastAPI</span>
+                                <span class="project-card__tech-tag">SQLAlchemy</span>
+                                <span class="project-card__tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="https://github.com/ameendababat/Task3-Python" target="_blank" class="project-card__link project-card__link--github"><i class="fa-brands fa-github"></i>View Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Project Card 3 -->
+                    <article class="project-card">
+                        <div class="project-card__media">
+                            <img src="/src/img/personal blog.PNG" alt="Personal blog website project" class="project-card__image">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">Personal Blog website project</h3>
+                            <p class="project-card__description">
+                                This first project is a fully responsive blog website created using HTML, CSS, and modern layout techniques (Grid Layout and Flexbox). 
+                                It is designed to adapt smoothly across various screen sizes, on large, medium, and small screens.
+                            </p>
+                            <div class="project-card__technologies">
+                                <strong class="project-card__tech-label">Skills used:</strong>
+                                <span class="project-card__tech-tag">HTML</span>
+                                <span class="project-card__tech-tag">CSS</span>
+                                <span class="project-card__tech-tag">Flexbox</span>
+                                <span class="project-card__tech-tag">Grid Layout</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="https://github.com/ameendababat/Personal-Blog-Website" target="_blank" class="project-card__link project-card__link--github"><i class="fa-brands fa-github"></i>View Code</a>
+                                <a href="https://ameendababat.github.io/Personal-Blog-Website/" target="_blank" class="project-card__link project-card__link--demo"><i class="fas fa-play-circle fa-2x"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="projects__footer">
+                    <a class="btn btn--primary"  href="https://github.com/ameendababat?tab=repositories" target="_blank">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="skills__container">
+                <h2 class="skills__heading"><span class="skills__heading-text">Technical Skills</span></h2>
+                <div class="skills__grid">
+                    <!-- Backend Development skils -->
+                    <article class="skill-category">
+                        <header class="skill-category__header">
+                            <div class="skill-category__icon-wrapper">
+                                <i class="fas fa-server text-xl skill-icon"></i>
+                            </div>
+                            <h3 class="skill-category__title">Backend Development</h3>
+                        </header>
+                        <div class="skill-category__items">
+                            <span class="skill-category__item">python</span>
+                            <span class="skill-category__item">FastAPI Framework</span>
+                            <span class="skill-category__item">MVC</span>
+                            <span class="skill-category__item">Django </span>
+                            <span class="skill-category__item">OOP</span>
+                        </div>
+
+                    </article>
+                    <!-- Database & ORM skils -->
+                    <article class="skill-category">
+                        <header class="skill-category__header">
+                            <div class="skill-category__icon-wrapper">
+                                <i class="fas fa-database text-xl skill-icon"></i>
+                            </div>
+                            <h3 class="skill-category__title">Database & ORM</h3>
+                        </header>
+                        <div class="skill-category__items">
+                            <span class="skill-category__item">PostgreSQL</span>
+                            <span class="skill-category__item">Mysql</span>
+                            <span class="skill-category__item">SQLAlchemy</span>
+                        </div>
+                    </article>
+                    <!-- Core Concepts skils -->
+                    <article class="skill-category">
+                        <header class="skill-category__header">
+                            <div class="skill-category__icon-wrapper">
+                                <i class="fas fa-brain text-xl skill-icon"></i>
+                            </div>
+                            <h3 class="skill-category__title">Core Concepts</h3>
+                        </header>
+                        <div class="skill-category__items">
+                            <span class="skill-category__item">Problem Solving</span>
+                            <span class="skill-category__item">Data Structures</span>
+                            <span class="skill-category__item">Algorithms</span>
+                            <span class="skill-category__item">SOLID</span>
+                            <span class="skill-category__item">Design Patterns</span>
+                            <span class="skill-category__item">Agile</span>
+                        </div>
+                    </article>
+                    <!-- DevOps & Deployment skils -->
+                    <article class="skill-category">
+                        <header class="skill-category__header">
+                            <div class="skill-category__icon-wrapper">
+                                <i class="fas fa-rocket text-xl skill-icon"></i>
+                            </div>
+                            <h3 class="skill-category__title">DevOps & Deployment</h3>
+                        </header>
+                        <div class="skill-category__items">
+                            <span class="skill-category__item">Git</span>
+                            <span class="skill-category__item">GitHub</span>
+                            <span class="skill-category__item">GitHub Actions</span>
+                            <span class="skill-category__item">Docker</span>
+                            <span class="skill-category__item">CI/CD</span>
+                        </div>
+                    </article>
+                    <!-- Frontend Technologies skils -->
+                    <article class="skill-category">
+                        <header class="skill-category__header">
+                            <div class="skill-category__icon-wrapper">
+                                <i class="fas fa-palette text-xl skill-icon"></i>
+                            </div>
+                            <h3 class="skill-category__title">Frontend Technologies</h3>
+                        </header>
+                        <div class="skill-category__items">
+                            <span class="skill-category__item">HTML5</span>
+                            <span class="skill-category__item">CSS3</span>
+                            <span class="skill-category__item">Bootstrap</span>
+                            <span class="skill-category__item">JavaScript</span>
+                            <span class="skill-category__item">Reactjs Basics</span>
+                        </div>
+                    </article>
+                    <!-- Soft Skills skils -->
+                    <article class="skill-category">
+                        <header class="skill-category__header">
+                            <div class="skill-category__icon-wrapper">
+                                <i class="fas fa-users text-xl skill-icon"></i>
+                            </div>
+                            <h3 class="skill-category__title">Soft Skills</h3>
+                        </header>
+                        <div class="skill-category__items">
+                            <span class="skill-category__item">Teamwork</span>
+                            <span class="skill-category__item">Self-Learning</span>
+                            <span class="skill-category__item">Time Management</span>
+                            <span class="skill-category__item">Communication Skills</span>
+                            <span class="skill-category__item">Adaptability</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="education" id="education">
+            <div class="education__container">
+            <header class="education__header">
+                <h2 class="education__heading">
+                <span class="education__heading-text">Education</span>
+                </h2>
+            </header>
+        
+            <div class="education__timeline">
+                <!-- Education item 1 -->
+                <article class="education__entry">
+                    <div class="education__entry-header">
+                        <div class="education__icon-container">
+                            <i class="education__icon fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education__info">
+                            <h3 class="education__title">Bachelor's Degree in Computer Engineering</h3>
+                            <p class="education__school">Palestine Technical University - Kadoorie</p>
+                            <div class="education__meta">
+                                <i class="education__meta-icon far fa-calendar-alt"></i>
+                                <span class="education__period">Aug 2019 - Jun 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="education__achievements">
+                    <h4 class="education__achievements-title">Activities & Achievements:</h4>
+                    <ul class="education__achievements-list">
+                        <li class="education__achievement">
+                            <i class="education__achievement-badge fas fa-certificate"></i>
+                            <span class="education__achievement-name">IEEEXtream.18,</span>
+                            <span class="education__achievement-context">CSE Club</span>
+                        </li>
+                        <!--achievements can be added here -->
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+        <section class="certificates" id="certificates">
+            <h2 class="certificates__title">Certificates</h2>
+                <div class="certificates__slider">
+                    <div class="certificates__track">
+                        <a href="#cert1"><img src="/src/img/microsoft.jpg" alt="Certificate 1" class="certificates__img"></a>
+                        <a href="#cert2"><img src="/src/img/DS GSG.PNG" alt="Certificate 2" class="certificates__img"></a>
+                        <a href="#cert3"><img src="/src/img/AI personal assistant GSG.jpg" alt="Certificate 3" class="certificates__img"></a>
+                        <a href="#cert4"><img src="/src/img/python Igate.PNG" alt="Certificate 4" class="certificates__img"></a>
+                        <a href="#cert5"><img src="/src/img/AI Igate.PNG" alt="Certificate 5" class="certificates__img"></a>
+                        <a href="#cert6"><img src="/src/img/ui ux.jpg" alt="Certificate 6" class="certificates__img"></a>
+                    </div>
+                </div>
+
+            <!-- ID for Target -->
+            <div id="cert1" class="certificates__overlay">
+                <a href="#certificates" class="certificates__close"></a>
+                <img src="/src/img/microsoft.jpg" class="certificates__preview" alt="Certificate 1">
+            </div>
+            <div id="cert2" class="certificates__overlay">
+                <a href="#certificates" class="certificates__close"></a>
+                <img src="/src/img/DS GSG.PNG" class="certificates__preview" alt="Certificate 2">
+            </div>
+            <div id="cert3" class="certificates__overlay">
+                <a href="#certificates" class="certificates__close"></a>
+                <img src="/src/img/AI personal assistant GSG.jpg" class="certificates__preview" alt="Certificate 3">
+            </div>
+            <div id="cert4" class="certificates__overlay">
+                <a href="#certificates" class="certificates__close"></a>
+                <img src="/src/img/python Igate.PNG" class="certificates__preview" alt="Certificate 4">
+            </div>
+            <div id="cert5" class="certificates__overlay">
+                <a href="#certificates" class="certificates__close"></a>
+                <img src="/src/img/AI Igate.PNG" class="certificates__preview" alt="Certificate 5">
+            </div>
+            <div id="cert6" class="certificates__overlay">
+                <a href="#certificates" class="certificates__close"></a>
+                <img src="/src/img/ui ux.jpg" class="certificates__preview" alt="Certificate 6">
+            </div>
+        </section>
+
+        
+        <section class="contact" id="contact">
+            <div class="contact__container">
+        
+                <header class="contact__header">
+                <h2 class="contact__heading"><span class="contact__heading-text">Contact Me</span></h2>
+                
+                </header>
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3 class="contact__subheading">Contact Information</h3>
+                        <p class="contact__description">
+                            Feel free to reach out if you're looking for a developer, or have any questions.
+                        </p>
+                        <!-- Location -->
+                        <div class="contact__details">
+                            <div class="contact__item">
+                                <div class="contact__icon-wrapper">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact__text">
+                                    <h4 class="contact__item-title">Location</h4>
+                                    <p class="contact__item-content">Tubas, Palestine</p>
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="contact__item">
+                                <div class="contact__icon-wrapper">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact__text">
+                                    <h4 class="contact__item-title">Email</h4>
+                                    <a href="mailto:ameendababat07@gmail.com" class="contact__link">ameendababat07@gmail.com</a>
+                                </div>
+                            </div>
+                            <!-- Phone  -->
+                            <div class="contact__item">
+                                <div class="contact__icon-wrapper">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact__text">
+                                    <h4 class="contact__item-title">Phone</h4>
+                                    <a href="tel:972569787270" class="contact__link">972-569787270</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact__social">
+                            <div class="contact__social-group">
+                                <h3 class="contact__social-heading">Follow Me</h3>
+                                <div class="contact__social-links">
+                                    <a class="contact__social-link" href="https://www.linkedin.com/in/ameendababat/" target="_blank"><img class="contact__social-icon" src="https://www.iconpacks.net/icons/1/free-linkedin-icon-130-thumb.png" alt=""></a>
+                                    <a class="contact__social-link" href="https://github.com/ameendababat" target="_blank"><i class="fab fa-github text-3xl"></i></a>
+                                    <a class="contact__social-link" href="tel:972569787270"><img class="contact__social-icon" src="https://marketplace.canva.com/Vmp9Y/MAEvzQVmp9Y/1/tl/canva-whatsapp-status-icon-MAEvzQVmp9Y.png" alt=""></a>
+                                    <a class="contact__social-link" href="https://www.facebook.com/kdababat" target="_blank"><img class="contact__social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/960px-Facebook_Logo_%282019%29.png" alt=""></a>
+                                    <a class="contact__social-link" href="https://x.com/AmeenDababat" target="_blank"><img class="contact__social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/X_icon.svg/2048px-X_icon.svg.png" alt=""></a>
+                                    <a class="contact__social-link" href="https://www.youtube.com/@ameendababat9886" target="_blank"><img class="contact__social-icon" src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png" alt=""></a>
+                                </div>
+                                </div>
+                            <!-- Competitive Programming -->
+                        <div class="contact__social-group">
+                            <h3 class="contact__social-heading">Competitive Programming</h3>
+                            <div class="contact__social-links">
+                                <a class="contact__social-link" href="https://codeforces.com/profile/ameendababat" target="_blank"><img class="contact__social-icon" src="https://cdn.iconscout.com/icon/free/png-256/free-code-forces-logo-icon-svg-png-download-2944796.png" alt=""></a>
+                                <a class="contact__social-link" href="https://leetcode.com/u/ameendababat/" target="_blank"><img class="contact__social-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt=""></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__content">
+                <a href="#home" class="footer__logo">Ameen Dababat</a>
+                <p class="footer__copyright">&copy; ameen dababat 2025. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
