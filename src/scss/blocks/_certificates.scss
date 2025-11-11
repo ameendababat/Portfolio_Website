@@ -1,0 +1,79 @@
+@use '../utils/utils' as utils;
+
+.certificates {
+    padding: 48px 0;
+    background-color: #fafafa;
+    position: relative;
+
+    &__title {
+        text-align: center;
+        color: utils.$color-primary;
+        margin-bottom: 32px;
+        text-decoration: underline;
+
+}
+
+    &__slider {
+        overflow: hidden;
+        position: relative;
+}
+
+    &__track {
+        display: flex;
+        gap: 24px;
+        padding: 16px 16px 32px;
+        animation: scrollCertificates 20s linear infinite;
+}
+
+    &__img {
+        flex: 0 0 auto;
+        width: 220px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes scrollCertificates {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* target */
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+}
+
+    &__preview {
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+    &:target .certificates__overlay {
+        display: none; 
+}
+
+.certificates__overlay:target {
+    display: flex;
+}
+
+    &__close {
+        position: absolute;
+        inset: 0;
+        display: block;
+}
+}

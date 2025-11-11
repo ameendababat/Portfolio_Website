@@ -1,0 +1,43 @@
+@use '../utils/utils' as utils;
+
+.education {
+
+    .education__heading {
+            margin: 15px;
+            text-align: center;
+            color: utils.$color-primary;
+            text-decoration: underline;
+            margin-bottom: 32px;
+    }
+
+    .education__timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .education__entry {
+            background: utils.$color-primary;
+            border-left: 4px solid utils.$color-secondary;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: utils.$color-dark;
+        }
+        
+        .education__icon-container {
+            color: utils.$color-secondary;
+        }
+        .education__info {
+
+            .education__title {
+                color: utils.$color-secondary;
+            }
+        }
+
+        .education__achievements {
+
+            .education__achievements-title {
+                color: utils.$color-secondary;
+            }
+        }
+    }
+}

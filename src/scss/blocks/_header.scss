@@ -1,0 +1,45 @@
+@use '../utils/utils' as utils;
+
+.header {
+    background: utils.$color-primary;
+    box-shadow: 15px 14px 8px 2px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .navbar {
+        @include utils.flex-center;
+        justify-content: space-between;
+        padding: 16px 20px;
+
+        &__logo {
+            font-size: 22.4px;
+            font-weight: bold;
+            color: utils.$color-secondary;
+        }
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        margin-right: 20rem;
+
+        & .navbar__link {
+            color: utils.$color-white;
+            font-weight: 500;
+            transition: color 0.3s;
+
+        &:hover {
+            color: utils.$color-secondary;
+            text-decoration: underline;
+        }
+    }
+    }
+}
+
+    @include utils.respond(medium) {
+        .navbar__menu {
+            display: none; 
+    }
+}
+}

@@ -1,0 +1,19 @@
+@use '../utils/utils' as utils;
+
+.footer {
+    background: utils.$color-primary;
+    color: utils.$color-secondary;
+    text-align: center;
+    padding: 1.5rem 0;
+
+    .footer__logo {
+        color: utils.$color-secondary;
+        font-weight: 600;
+        font-size: 19.2px;
+    }
+
+    .footer__copyright {
+        font-size: 0.9rem;
+        color: utils.$color-secondary;
+    }
+}

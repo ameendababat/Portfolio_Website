@@ -1,0 +1,38 @@
+@use '../utils/utils' as utils;
+
+h1, h2, h3, h4, h5 {
+    font-weight:utils.$font-weight-bold;
+    color: utils.$color-dark;
+}
+
+section {
+    @include utils.section-padding;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &--primary {
+        background: utils.$color-primary;
+        color: utils.$color-white;
+
+    &:hover {
+        background: darken(utils.$color-primary, 8%);
+    }
+}
+
+    &--secondary {
+        border: 2px solid utils.$color-primary;
+        color: utils.$color-primary;
+
+        &:hover {
+            background: utils.$color-primary;
+            color: utils.$color-white;
+    }
+    }
+}
+

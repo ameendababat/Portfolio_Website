@@ -1,0 +1,52 @@
+@use '../utils/utils' as utils;
+
+.skills {
+
+    .skills__container {
+
+        .skills__heading {
+            text-align: center;
+            color: utils.$color-primary;
+            text-decoration: underline;
+            margin-bottom: 32px;
+        }
+    }
+
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+
+    .skill-category {
+        background: utils.$color-primary;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    .skill-category__icon-wrapper i {
+        color: utils.$color-secondary;
+    }
+
+    .skill-category__title {
+        color: utils.$color-secondary;
+        margin-bottom: 1rem;
+    }
+
+
+        &__items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+        .skill-category__item {
+            background: #f0f5ff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: utils.$color-primary;
+            font-weight: bold;
+        }
+    }
+    }
+}
+}

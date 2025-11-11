@@ -1,0 +1,37 @@
+@use '../utils/utils' as utils;
+
+.home {
+    @include utils.section-padding;
+    text-align: center;
+    background: linear-gradient(to right, #bf998f, #3a3e4d);
+    height: 100vh;
+
+    &__name {
+        color: utils.$color-white;
+    }
+
+    &__title {
+        margin: 1rem 0;
+        font-size: 1.3rem;
+        color: utils.$color-white;
+    }
+
+    &__description {
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        color: utils.$color-dark;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        
+    }
+
+    @include utils.respond(small) {
+        &__title { font-size: 1.1rem; }
+    }
+}

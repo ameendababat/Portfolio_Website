@@ -1,0 +1,92 @@
+@use '../utils/utils' as utils;
+
+.contact {
+
+    .contact__heading {
+        text-align: center;
+        color: utils.$color-primary;
+        text-decoration: underline;
+        margin-bottom: 32px;
+    }
+
+    .contact__content {
+        background-color: utils.$color-primary;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        padding: 20px;
+
+        @include utils.respond(medium) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .contact__subheading {
+            color: utils.$color-white;
+            padding: 0.5rem;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        .contact__description {
+            color: utils.$color-light;
+            padding: 0.6rem;
+            margin: 8px 0;
+            font-size: 0.8rem;
+        }
+
+        .contact__details {
+            i {
+                color: utils.$color-secondary;
+            }
+
+            .contact__item-title {
+                color: utils.$color-light;
+            }
+        }
+
+        .contact__text {
+            color: utils.$color-white;
+        }
+
+        .contact__link {
+            color: utils.$color-light;
+        }
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+}
+
+    .contact__social {
+
+        .contact__social-heading {
+            color: utils.$color-white;
+            font-size: 16px;
+        }
+    }
+
+    .contact__social-links {
+        display: flex;
+        flex-direction: row;
+        
+        a {
+            padding: 0 5px;
+        }
+
+        i {
+            color: utils.$color-dark;
+        }
+    }
+
+    .contact__item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem 0;
+
+        i { color: utils.$color-light; font-size: 1.2rem; }
+    }
+}

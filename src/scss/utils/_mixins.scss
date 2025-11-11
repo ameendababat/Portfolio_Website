@@ -1,0 +1,26 @@
+@use 'variables' as variables;
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == large {
+        @media (max-width: variables.$break-large) { @content; }
+    }
+    @if $breakpoint == medium {
+        @media (max-width: variables.$break-medium) { @content; }
+    }
+    @if $breakpoint == small {
+        @media (max-width: variables.$break-small) { @content; }
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin section-padding {
+    padding: 5rem 2rem;
+    @include respond(medium) { padding: 3rem 1.5rem; }
+    @include respond(small) { padding: 2rem 1rem; }
+}

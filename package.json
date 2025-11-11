@@ -1,0 +1,14 @@
+{
+  "name": "ameendababat_homepage",
+  "version": "1.0.0",
+  "description": "Ameendababat Personal Homepage",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass src/scss/main.scss dist/css/main.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.93.2"
+  }
+}

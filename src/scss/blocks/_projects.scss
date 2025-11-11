@@ -1,0 +1,88 @@
+@use '../utils/utils' as utils;
+
+.projects {
+    
+    &__grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .projects__heading {
+        
+        text-align: center;
+        color: utils.$color-primary;
+        text-decoration: underline;
+        margin-bottom: 32px;
+    }
+
+    .project-card {
+        background: utils.$color-primary;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+    }
+
+        .project-card__media img{
+            
+                width: 100%;
+        }
+
+    &__body { 
+        padding: 1.5rem;
+    }
+    &__title { 
+        color: utils.$color-secondary; 
+    }
+    &__description { 
+        color: utils.$color-white;
+        margin: 1rem 0; 
+    }
+
+    &__tech-tag {
+        background: utils.$color-light;
+        color: utils.$color-primary;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+
+    .project-card__technologies {
+        .project-card__tech-label {
+            color: utils.$color-secondary;
+        }
+    }
+
+        .project-card__actions a {
+            color: utils.$color-secondary;
+            padding: 5px;
+    }
+
+        .project-card__actions i {
+            padding: 5px;
+    }
+
+    }
+
+    .projects__footer {
+        margin: 20px 0;
+        padding: 20px;
+
+    }
+
+    .projects__footer a {
+        background-color: utils.$color-primary;
+        padding: 10px;
+        border-radius: 10px;
+        color: utils.$color-secondary;
+        font-weight: bold;
+        position: absolute;
+        left: 600px;
+        
+    }
+}
