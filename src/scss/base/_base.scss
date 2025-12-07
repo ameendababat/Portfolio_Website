@@ -1,7 +1,12 @@
-@use '../utils/utils' as utils;
+@use "../utils/utils" as utils;
+@use "sass:color";
 
-h1, h2, h3, h4, h5 {
-    font-weight:utils.$font-weight-bold;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: utils.$font-weight-bold;
     color: utils.$color-dark;
 }
 
@@ -16,23 +21,22 @@ section {
     font-weight: 600;
     transition: all 0.3s ease;
 
-    &--primary {
-        background: utils.$color-primary;
-        color: utils.$color-white;
+  &--primary {
+    background: utils.$color-primary;
+    color: utils.$color-white;
 
     &:hover {
-        background: darken(utils.$color-primary, 8%);
+      background: color.adjust(utils.$color-primary, $lightness: -8%);
+    }
+  }
+
+  &--secondary {
+    border: 2px solid utils.$color-primary;
+    color: utils.$color-primary;
+
+    &:hover {
+        background: utils.$color-primary;
+        color: utils.$color-white;
     }
 }
-
-    &--secondary {
-        border: 2px solid utils.$color-primary;
-        color: utils.$color-primary;
-
-        &:hover {
-            background: utils.$color-primary;
-            color: utils.$color-white;
-    }
-    }
 }
-

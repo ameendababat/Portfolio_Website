@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "Ameendababat Personal Homepage",
   "main": "index.js",
-  
   "scripts": {
-    "build:css": "sass src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
-    "build:html": "cpx \"src/*.html\" dist/",
-    "build:img": "cpx \"src/img/**/*\" dist/img",
-    "build": "npm run build:css && npm run build:html && npm run build:img",
-    "watch": "sass --watch src/scss/main.scss dist/css/main.css --no-source-map --style=expanded",
-    "preview": "serve dist",
-    "predeploy": "npm run build",
+    "build:css": "sass src/scss:dist/css",
+    "copy:html": "cpx \"src/*.html\" dist",
+    "copy:img": "cpx \"src/img/**/*\" dist/img",
+    "copy:js": "cpx \"src/js/**/*\" dist/js",
+    "build": "npm run build:css && npm run copy:html && npm run copy:img && npm run copy:js",
+    "serve": "serve dist -p 3000",
+    "dev": "npm run build && npm run serve",
     "deploy": "gh-pages -d dist"
   },
   "author": "Ameen Dababat",
