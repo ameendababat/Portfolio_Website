@@ -1,79 +1,258 @@
-@use '../utils/utils' as utils;
+@use "../utils/utils" as utils;
+@use "sass:color";
 
 .certificates {
-    padding: 48px 0;
-    background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 20% 50%,
+        rgba(utils.$color-primary, 0.03) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(utils.$color-secondary, 0.03) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
     position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, utils.$color-primary 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    width: 100%;
 
-    &__title {
-        text-align: center;
-        color: utils.$color-primary;
-        margin-bottom: 32px;
-        text-decoration: underline;
+    @include utils.respond(medium) {
+      font-size: 2rem;
+    }
 
-}
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 4px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        utils.$color-primary,
+        transparent
+      );
+      border-radius: 2px;
+    }
+  }
 
-    &__slider {
-        overflow: hidden;
-        position: relative;
-}
+  &__slider {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 1rem 0;
+    max-width: 100%;
+    margin: 0 auto;
 
-    &__track {
-        display: flex;
-        gap: 24px;
-        padding: 16px 16px 32px;
-        animation: scrollCertificates 20s linear infinite;
-}
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
 
-    &__img {
-        flex: 0 0 auto;
-        width: 220px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-        transition: transform 0.3s ease;
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        transparent 100%
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 1) 0%,
+        transparent 100%
+      );
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    animation: scrollCertificates 30s linear infinite;
 
     &:hover {
-        transform: scale(1.06);
+      animation-play-state: paused;
     }
-}
+  }
 
-@keyframes scrollCertificates {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
+  &__img {
+    flex: 0 0 auto;
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(utils.$color-primary, 0.1) inset;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 
-/* target */
-    &__overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.85);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-}
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: linear-gradient(
+        135deg,
+        rgba(utils.$color-primary, 0.1) 0%,
+        transparent 100%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-    &__preview {
-        max-width: 90%;
-        max-height: 80vh;
-        border-radius: 12px;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    &:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25),
+        0 0 0 2px rgba(utils.$color-primary, 0.3) inset,
+        0 0 30px rgba(utils.$color-primary, 0.2);
 
-    &:target .certificates__overlay {
-        display: none; 
-}
+      &::before {
+        opacity: 1;
+      }
+    }
 
-.certificates__overlay:target {
+    @include utils.respond(medium) {
+      width: 240px;
+      height: 170px;
+    }
+  }
+
+  @keyframes scrollCertificates {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__preview {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 20px;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.1),
+      0 20px 80px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &:target &__overlay {
+    display: none;
+  }
+
+  .certificates__overlay:target {
     display: flex;
-}
+  }
 
-    &__close {
-        position: absolute;
-        inset: 0;
-        display: block;
-}
+  &__close {
+    position: absolute;
+    inset: 0;
+    display: block;
+    cursor: pointer;
+
+    &::before {
+      content: "✕";
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 300;
+      transition: all 0.3s ease;
+      pointer-events: none;
+
+      @include utils.respond(medium) {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+
+    &:hover::before {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: rotate(90deg) scale(1.1);
+    }
+  }
 }

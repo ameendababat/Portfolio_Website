@@ -1,43 +1,322 @@
-@use '../utils/utils' as utils;
+@use "../utils/utils" as utils;
+@use "sass:color";
 
 .education {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
 
-    .education__heading {
-            margin: 15px;
-            text-align: center;
-            color: utils.$color-primary;
-            text-decoration: underline;
-            margin-bottom: 32px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 20% 50%,
+        rgba(utils.$color-primary, 0.03) 0%,
+        transparent 50%
+        ),
+        radial-gradient(
+        circle at 80% 80%,
+        rgba(utils.$color-secondary, 0.03) 0%,
+        transparent 50%
+        );
+    pointer-events: none;
+    z-index: 0;
     }
 
-    .education__timeline {
-        display: flex;
-        flex-direction: column;
+  &__container {
+    position: relative;
+    z-index: 1;
+    }
+
+  &__header {
+    position: relative;
+    z-index: 1;
+    }
+
+  &__heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+
+    @include utils.respond(medium) {
+        font-size: 2rem;
+    }
+    }
+
+  &__heading-text {
+    background: linear-gradient(135deg, utils.$color-primary 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 4px;
+        background: linear-gradient(
+        90deg,
+        transparent,
+        utils.$color-primary,
+        transparent
+        );
+        border-radius: 2px;
+    }
+    }
+
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+
+    @include utils.respond(medium) {
         gap: 2rem;
-
-        .education__entry {
-            background: utils.$color-primary;
-            border-left: 4px solid utils.$color-secondary;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            color: utils.$color-dark;
-        }
-        
-        .education__icon-container {
-            color: utils.$color-secondary;
-        }
-        .education__info {
-
-            .education__title {
-                color: utils.$color-secondary;
-            }
-        }
-
-        .education__achievements {
-
-            .education__achievements-title {
-                color: utils.$color-secondary;
-            }
-        }
     }
+    }
+
+  &__entry {
+    background: linear-gradient(
+        135deg,
+        utils.$color-primary 0%,
+        color.adjust(utils.$color-primary, $lightness: -5%) 100%
+    );
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        height: 150px;
+      background: radial-gradient(
+        circle at top right,
+        rgba(255, 255, 255, 0.15),
+        transparent 70%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+    }
+  }
+
+  &__entry-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+
+    @include utils.respond(medium) {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+
+    @include utils.respond(medium) {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+    }
+    }
+
+  &__entry:hover &__icon-container {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(-5deg) scale(1.1);
+  }
+
+  &__icon {
+    color: utils.$color-white;
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+
+    @include utils.respond(medium) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__entry:hover &__icon {
+    transform: scale(1.15);
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    color: utils.$color-white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+
+    @include utils.respond(medium) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__entry:hover &__title {
+    color: utils.$color-secondary;
+  }
+
+  &__school {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+
+    @include utils.respond(medium) {
+      font-size: 1rem;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+  }
+
+  &__meta-icon {
+    font-size: 1rem;
+    color: utils.$color-secondary;
+  }
+
+  &__period {
+    font-weight: 500;
+  }
+
+  &__achievements {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  &__achievements-title {
+    color: utils.$color-secondary;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: "🏆";
+      font-size: 1.2rem;
+    }
+  }
+
+  &__achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__achievement {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+    }
+  }
+
+  &__achievement-badge {
+    color: utils.$color-secondary;
+    font-size: 1rem;
+    min-width: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  &__achievement:hover &__achievement-badge {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  &__achievement-name {
+    font-weight: 600;
+    color: utils.$color-white;
+  }
+
+  &__achievement-context {
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+  }
 }

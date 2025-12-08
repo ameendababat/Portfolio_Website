@@ -6,20 +6,22 @@ h2,
 h3,
 h4,
 h5 {
-    font-weight: utils.$font-weight-bold;
-    color: utils.$color-dark;
+  font-weight: utils.$font-weight-bold;
+  color: utils.$color-dark;
 }
 
 section {
-    @include utils.section-padding;
+  @include utils.section-padding;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
 
   &--primary {
     background: utils.$color-primary;
@@ -35,8 +37,28 @@ section {
     color: utils.$color-primary;
 
     &:hover {
-        background: utils.$color-primary;
-        color: utils.$color-white;
+      background: utils.$color-primary;
+      color: utils.$color-white;
     }
+  }
 }
+
+// Container for all sections to prevent horizontal overflow
+.projects__container,
+.skills__container,
+.education__container,
+.contact__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include utils.respond(medium) {
+    padding: 0 1.5rem;
+  }
+
+  @include utils.respond(small) {
+    padding: 0 1rem;
+  }
 }

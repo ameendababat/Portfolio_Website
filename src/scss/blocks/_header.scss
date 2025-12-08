@@ -1,45 +1,230 @@
-@use '../utils/utils' as utils;
+@use "../utils/utils" as utils;
+@use "sass:color";
 
 .header {
-    background: utils.$color-primary;
-    box-shadow: 15px 14px 8px 2px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+  background: linear-gradient(
+    135deg,
+    utils.$color-primary 0%,
+    color.adjust(utils.$color-primary, $lightness: -5%) 100%
+  );
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    .navbar {
-        @include utils.flex-center;
-        justify-content: space-between;
-        padding: 16px 20px;
+  .navbar {
+    @include utils.flex-center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 
-        &__logo {
-            font-size: 22.4px;
-            font-weight: bold;
-            color: utils.$color-secondary;
-        }
+    &__brand {
+      position: relative;
+      z-index: 1001;
+    }
+
+    &__logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: utils.$color-white;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: utils.$color-secondary;
+      }
+    }
+
+    &__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+      position: relative;
+
+      @include utils.respond(medium) {
+        display: flex;
+      }
+    }
+
+    &__toggle-bar {
+      width: 28px;
+      height: 3px;
+      background: utils.$color-white;
+      border-radius: 3px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__toggle.active &__toggle-bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &__toggle.active &__toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &__toggle.active &__toggle-bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
     &__menu {
-        display: flex;
-        list-style: none;
-        gap: 1.5rem;
-        margin-right: 20rem;
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
 
-        & .navbar__link {
-            color: utils.$color-white;
-            font-weight: 500;
-            transition: color 0.3s;
+      @include utils.respond(medium) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 280px;
+        flex-direction: column;
+        background: linear-gradient(
+          135deg,
+          utils.$color-primary 0%,
+          color.adjust(utils.$color-primary, $lightness: -10%) 100%
+        );
+        padding: 5rem 2rem 2rem;
+        gap: 1.5rem;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        overflow-y: auto;
+
+        &.active {
+          right: 0;
+        }
+      }
+    }
+
+    &__item {
+      margin: 0;
+    }
+
+    &__link {
+      color: utils.$color-white;
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: block;
+
+      &:hover {
+        color: utils.$color-secondary;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      @include utils.respond(medium) {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
 
         &:hover {
-            color: utils.$color-secondary;
-            text-decoration: underline;
+          background: rgba(255, 255, 255, 0.15);
+          transform: translateX(5px);
         }
+      }
     }
+
+    &__theme-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-left: 1rem;
+      position: relative;
+      overflow: hidden;
+
+      i {
+        color: utils.$color-white;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(255, 255, 255, 0.2) 0%,
+          transparent 70%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: scale(1.1) rotate(15deg);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        &::before {
+          opacity: 1;
+        }
+
+        i {
+          transform: scale(1.1);
+        }
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      @include utils.respond(medium) {
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
+        position: absolute;
+        right: 5.6rem;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:hover {
+          transform: translateY(-50%) scale(1.1) rotate(15deg);
+        }
+      }
     }
+  }
 }
 
-    @include utils.respond(medium) {
-        .navbar__menu {
-            display: none; 
-    }
+// Overlay for mobile menu
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
 }
+
+body.menu-open {
+  overflow: hidden;
 }
