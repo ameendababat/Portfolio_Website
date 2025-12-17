@@ -11,8 +11,10 @@
     "build": "npm run build:css && npm run copy:html && npm run copy:img && npm run copy:js",
     "serve": "serve dist -p 3000",
     "dev": "npm run build && npm run serve",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://ameendababat.github.io/Portfolio_Website/",
   "author": "Ameen Dababat",
   "license": "ISC",
   "devDependencies": {
